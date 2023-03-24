@@ -1,13 +1,12 @@
-version: '1'
+version: "3.7"
 
 services:
-
-  web:
-    image: ngix
-
-  database:
-    image: radis
-
- 
-
-:wq!
+  docs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    ports:
+      - 8000:8000
+    volumes:
+      - ./:/app
